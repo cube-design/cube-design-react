@@ -68,12 +68,12 @@ class App extends Component {
               <Text fontFamily="primary" textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
             </Div>
             <Div textColor="neutral800" w="50%" p={{ x: "1rem", y: "1rem" }}>
-              <Text textSize="heading400" textWeight="00" align="left" justify="left">Headline 400 / Paragraph 100</Text>
-              <Text textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
+              <Text fontFamily="primary" textSize="heading400" textWeight="00" align="left" justify="left">Headline 400 / Paragraph 100</Text>
+              <Text fontFamily="primary" textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
             </Div>
             <Div textColor="neutral800" w="50%" p={{ x: "1rem", y: "1rem" }}>
               <Text fontFamily="primary" textSize="heading400" textWeight="00" align="left" justify="left" textTransform="uppercase">Caption 200 / Paragraph 100</Text>
-              <Text textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
+              <Text fontFamily="primary" textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
             </Div>
           </Div>
           
