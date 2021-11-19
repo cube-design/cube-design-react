@@ -34,4 +34,4 @@ Text.defaultProps = {
   p: "0"
 };
 
-export default Text;
+export {Text};
