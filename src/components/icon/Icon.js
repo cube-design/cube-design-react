@@ -16,9 +16,12 @@ const Icon = React.forwardRef((props, ref) => {
             onMouseEnter={() => setHover(1)}
             onMouseLeave={() => setHover(0)}
             ref={ref}
-            viewBox="0 0 24 24"
+            viewBox={props.viewBox}
+            width={props.width}
+            height={props.height}
             {...output[0]}
             $styleArray={output[1]}
+            fill="none"
           >
             <IconName
               color={
@@ -42,7 +45,10 @@ const BasicIcon = styled("svg", props => {
 
 Icon.defaultProps = {
   size: "1.5rem",
-  color: "black"
+  color: "black",
+  viewBox: "0 0 16 16",
+  width: "16",
+  height: "16"
 };
 
-export default Icon;
+export {Icon};
