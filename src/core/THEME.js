@@ -136,6 +136,10 @@ const THEME = {
     code: "monospace"
   },
 
+  backgroundColor : {
+    primary : "blue400",
+  },
+
   rounded: {
     "0": "0px",
     xs: "2px",

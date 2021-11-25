@@ -3,6 +3,12 @@ import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
 import { Text } from "../src/components/text/Text";
 import { Icon } from "../src/components/icon/Icon";
+import { Button } from "../src/components/button/Button";
+import { PrimaryButton } from "../src/components/button/PrimaryButton";
+import { SecondaryButton } from "../src/components/button/SecondaryButton";
+import { ErrorButton } from "../src/components/button/ErrorButton";
+import { MinimalButton } from "../src/components/button/MinimalButton";
+import { Anchor } from '../src/components/anchor/Anchor'
 
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
@@ -38,7 +44,7 @@ class App extends Component {
             p={{ x: "1rem", y: "4rem" }}
           >
 
-            <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }} justify="left" align="left">
+            <Div p={{ x: "1rem", y: "1rem" }} justify="left" align="left">
               <Text fontFamily="primary" textSize="heading900" textColor="neutral800" textWeight="600" m="15px 0 0 0">Heading H-900</Text>
               <Text fontFamily="primary" textSize="heading800" textColor="neutral800" textWeight="600" m="15px 0 0 0">Heading H-800</Text>
               <Text fontFamily="primary" textSize="heading700" textColor="neutral800" textWeight="600" m="15px 0 0 0">Heading H-700</Text>
@@ -55,35 +61,35 @@ class App extends Component {
               <Text fontFamily="code" textSize="codeDefault" textColor="blue600" textWeight="400" m="15px 0 0 0" p="4px 8px" d="inline-block" rounded="2px" bg="blue50" border="1px solid" borderColor="blue200">Code Default</Text>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
 
-            <Text p={{ x: "1rem"}} fontFamily="primary" textSize="heading900" textColor="neutral800" textWeight="600" m="15px 0 0 0">Example of use</Text>
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading900" textColor="neutral800" textWeight="600" m="15px 0 0 0">Example of use</Text>
 
-            <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
-              <Text fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Headline 700 / Paragraph 300</Text>
-              <Text fontFamily="primary" textSize="paragraph300" textColor="neutral700" textWeight="400" align="left" justify="left" m="16px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
-            </Div>
-            <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
-              <Text fontFamily="primary" textSize="heading600" textWeight="600" align="left" justify="left">Headline 600 / Paragraph 200</Text>
-              <Text fontFamily="primary" textSize="paragraph200" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
-            </Div>
-            <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
-              <Text fontFamily="primary" textSize="heading500" textWeight="00" align="left" justify="left">Headline 500 / Paragraph 100</Text>
-              <Text fontFamily="primary" textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
-            </Div>
-            <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
-              <Text fontFamily="primary" textSize="heading400" textWeight="00" align="left" justify="left">Headline 400 / Paragraph 100</Text>
-              <Text fontFamily="primary" textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
-            </Div>
-            <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
-              <Text fontFamily="primary" textSize="heading400" textWeight="00" align="left" justify="left" textTransform="uppercase">Caption 200 / Paragraph 100</Text>
-              <Text fontFamily="primary" textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
-            </Div>
+              <Div p={{ x: "1rem", y: "1rem" }}>
+                <Text fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Headline 700 / Paragraph 300</Text>
+                <Text fontFamily="primary" textSize="paragraph300" textColor="neutral700" textWeight="400" align="left" justify="left" m="16px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
+              </Div>
+              <Div p={{ x: "1rem", y: "1rem" }}>
+                <Text fontFamily="primary" textSize="heading600" textWeight="600" align="left" justify="left">Headline 600 / Paragraph 200</Text>
+                <Text fontFamily="primary" textSize="paragraph200" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
+              </Div>
+              <Div p={{ x: "1rem", y: "1rem" }}>
+                <Text fontFamily="primary" textSize="heading500" textWeight="00" align="left" justify="left">Headline 500 / Paragraph 100</Text>
+                <Text fontFamily="primary" textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
+              </Div>
+              <Div p={{ x: "1rem", y: "1rem" }}>
+                <Text fontFamily="primary" textSize="heading400" textWeight="00" align="left" justify="left">Headline 400 / Paragraph 100</Text>
+                <Text fontFamily="primary" textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
+              </Div>
+              <Div p={{ x: "1rem", y: "1rem" }}>
+                <Text fontFamily="primary" textSize="heading400" textWeight="00" align="left" justify="left" textTransform="uppercase">Caption 200 / Paragraph 100</Text>
+                <Text fontFamily="primary" textSize="paragraph100" textColor="neutral700" textWeight="400" align="left" justify="left" m="8px 0 0 0">Used for multiline pieces of content. Lorem ipsum dolor sit amet, ex lucilius hendrerit vim, tempor scaevola iudicabit ei ius, te eum illud impetus antiopam.</Text>
+              </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
-              <Text p={{ x: "1rem"}} fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Common Icons</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Common Icons</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Sucess" size="20px" m={{ r: "1rem" }} color="green400" />
                 <Icon name="Info" size="20px" m={{ r: "1rem" }} color="blue400" />
                 <Icon name="Warning" size="20px" m={{ r: "1rem" }} color="yellow400" />
@@ -106,9 +112,9 @@ class App extends Component {
               </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
-              <Text p={{ x: "1rem"}}fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Product</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Product</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="DataRed" width="32" height="32" viewBox="0 0 32 32" size="36px" m={{ r: "1rem" }} />
                 <Icon name="DataYellow" width="32" height="32" viewBox="0 0 32 32" size="36px" m={{ r: "1rem" }} />
                 <Icon name="DataGreen" width="32" height="32" viewBox="0 0 32 32" size="36px" m={{ r: "1rem" }} />
@@ -125,10 +131,10 @@ class App extends Component {
               </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
 
-              <Text p={{ x: "1rem"}}fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Action</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Action</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Add" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Remove" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Delete" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -152,7 +158,7 @@ class App extends Component {
                 <Icon name="Share" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
 
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Duplicate" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Code" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Translate" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -176,7 +182,7 @@ class App extends Component {
                 <Icon name="History" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
 
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Filter" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="FIlterKeep" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="FilterList" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -200,7 +206,7 @@ class App extends Component {
                 <Icon name="DeriveColumn" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
 
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Sort" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="SortAlphabetical" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="SortAlphabeticalDesc" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -224,7 +230,7 @@ class App extends Component {
                 <Icon name="Equals" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
 
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Archive" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="UnArchive" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="BringData" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -248,7 +254,7 @@ class App extends Component {
                 <Icon name="SocialMedia" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
 
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Maximize" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Select" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Tick" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -271,7 +277,7 @@ class App extends Component {
                 <Icon name="InnerJoin" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Selection" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="SendToMap" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Clean" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="GroupObject" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -285,9 +291,9 @@ class App extends Component {
               </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
-              <Text p={{ x: "1rem"}}fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Interface</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Interface</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Cog" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Notification" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="NotificationUpdated" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -310,7 +316,7 @@ class App extends Component {
                 <Icon name="User" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Mugshot" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Dasboard" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Time" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Manual" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -333,7 +339,7 @@ class App extends Component {
                 <Icon name="Control" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="SegmentedControl" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="EyeOpen" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="EyeOn" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="EyeOff" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -356,7 +362,7 @@ class App extends Component {
                 <Icon name="Stopwatch" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Key" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="CaretDown" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="CaretUp" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="CaretLeft" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -379,7 +385,7 @@ class App extends Component {
                 <Icon name="DoubleChevronRight" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="DoubleChevronUp" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="ExpandAll" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="ArrowVertical" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="ArrowHorizontal" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -402,7 +408,7 @@ class App extends Component {
                 <Icon name="DataLineage" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Random" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Feed" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="FeedSubscribed" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Compass" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -425,7 +431,7 @@ class App extends Component {
                 <Icon name="Walk" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="SymbolCircle" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="SymbolCross" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="SymbolDiamond" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="SymbolSquare" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -436,9 +442,9 @@ class App extends Component {
               </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
-              <Text p={{ x: "1rem"}}fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="20px" justify="left">Miscellaneous</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="20px" justify="left">Miscellaneous</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Wrench" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Home" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Office" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -462,7 +468,7 @@ class App extends Component {
                 <Icon name="Ninja" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
 
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Glass" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Cube" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="CubeAdd" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -486,7 +492,7 @@ class App extends Component {
                 <Icon name="Prescription" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
 
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="IpAddress" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="CellTower" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Satellite" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -495,9 +501,9 @@ class App extends Component {
               </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
-              <Text p={{ x: "1rem"}}fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Data</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Data</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Form" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Database" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="PieChart" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -520,7 +526,7 @@ class App extends Component {
                 <Icon name="SeriesSearch" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Chart" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="TimelineBarChart" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="HorizontalBarChart" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="GroupedBarChart" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -543,7 +549,7 @@ class App extends Component {
                 <Icon name="Flows" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="LayoutLinear" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="LayoutHierarchy" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Layout" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="LayoutAuto" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -555,9 +561,9 @@ class App extends Component {
               </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
-              <Text p={{ x: "1rem"}}fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Media</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Media</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Power" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="VoumeOff" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="VolumeDown" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -580,7 +586,7 @@ class App extends Component {
                 <Icon name="Fullscreen" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Keycommand" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Play" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Record" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Stop" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -603,9 +609,9 @@ class App extends Component {
               </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
-              <Text p={{ x: "1rem"}}fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Editor</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Editor</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Bold" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Italic" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Underline" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -628,7 +634,7 @@ class App extends Component {
                 <Icon name="RotatePage" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="TextHighlight" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="AlignmentBottom" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="AlignmentHorizontalCenter" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="AlignmentLeft" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -642,9 +648,9 @@ class App extends Component {
               </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
-              <Text p={{ x: "1rem"}}fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">File</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">File</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="Box" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Compressed" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Document" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -669,9 +675,9 @@ class App extends Component {
               </Div>
             </Div>
 
-            <Div w="55%"  d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
-              <Text p={{ x: "1rem"}}fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Table</Text>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" justify="left">Table</Text>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="AddColumnLeft" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="AddColumnRight" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="AddRowBottom" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -694,7 +700,7 @@ class App extends Component {
                 <Icon name="Columns" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="ListDetailView" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
-              <Div textColor="neutral800" p={{ x: "1rem", y: "1rem" }}>
+              <Div p={{ x: "1rem", y: "1rem" }}>
                 <Icon name="JoinTable" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="MergeColumns" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="SplitColumns" size="20px" m={{ r: "1rem" }} color="neutral600" />
@@ -704,6 +710,91 @@ class App extends Component {
                 <Icon name="PublishFunction" size="20px" m={{ r: "1rem" }} color="neutral600" />
                 <Icon name="Variable" size="20px" m={{ r: "1rem" }} color="neutral600" />
               </Div>
+            </Div>
+
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Primary button enable hover pressed focussed diable</Text>
+
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <PrimaryButton m={{ r: "1rem" }}>Label</PrimaryButton>
+                <PrimaryButton m={{ r: "1rem" }}><Icon name="Chat" size="20px" m={{ r: "1rem" }} color="neutralNo" />Label</PrimaryButton>
+                <PrimaryButton m={{ r: "1rem" }}>Label<Icon name="CaretDown" size="20px" m={{ l: "1rem" }} color="neutralNo" /></PrimaryButton>
+                <PrimaryButton m={{ r: "1rem" }}><Icon name="Chat" size="20px" color="neutralNo" /></PrimaryButton>
+              </Div>
+
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <PrimaryButton m={{ r: "1rem" }} disabled>Label</PrimaryButton>
+                <PrimaryButton m={{ r: "1rem" }} disabled><Icon name="Chat" size="20px" m={{ r: "1rem" }} color="neutralNo" />Label</PrimaryButton>
+                <PrimaryButton m={{ r: "1rem" }} disabled>Label<Icon name="CaretDown" size="20px" m={{ l: "1rem" }} color="neutralNo" /></PrimaryButton>
+                <PrimaryButton m={{ r: "1rem" }} disabled><Icon name="Chat" size="20px" color="neutralNo" /></PrimaryButton>
+              </Div>
+
+            </Div>
+
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Secondary button enable hover pressed focussed diable</Text>
+
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <SecondaryButton m={{ r: "1rem" }}>Label</SecondaryButton>
+                <SecondaryButton m={{ r: "1rem" }}><Icon name="Chat" size="20px" m={{ r: "1rem" }} color="neutral700" />Label</SecondaryButton>
+                <SecondaryButton m={{ r: "1rem" }}>Label<Icon name="CaretDown" size="20px" m={{ l: "1rem" }} color="neutral700" /></SecondaryButton>
+                <SecondaryButton m={{ r: "1rem" }}><Icon name="Chat" size="20px" color="neutral700" /></SecondaryButton>
+              </Div>
+
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <SecondaryButton m={{ r: "1rem" }} disabled>Label</SecondaryButton>
+                <SecondaryButton m={{ r: "1rem" }} disabled><Icon name="Chat" size="20px" m={{ r: "1rem" }} color="neutral500" />Label</SecondaryButton>
+                <SecondaryButton m={{ r: "1rem" }} disabled>Label<Icon name="CaretDown" size="20px" m={{ l: "1rem" }} color="neutral500" /></SecondaryButton>
+                <SecondaryButton m={{ r: "1rem" }} disabled><Icon name="Chat" size="20px" color="neutral500" /></SecondaryButton>
+              </Div>
+            </Div>
+
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Minimal button enable hover pressed focussed diable</Text>
+
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <MinimalButton m={{ r: "1rem" }}>Label</MinimalButton>
+                <MinimalButton m={{ r: "1rem" }}><Icon name="Chat" size="20px" m={{ r: "1rem" }} color="neutral700" />Label</MinimalButton>
+                <MinimalButton m={{ r: "1rem" }}>Label<Icon name="CaretDown" size="20px" m={{ l: "1rem" }} color="neutral700" /></MinimalButton>
+                <MinimalButton m={{ r: "1rem" }}><Icon name="Chat" size="20px" color="neutral700" /></MinimalButton>
+              </Div>
+
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <MinimalButton m={{ r: "1rem" }} disabled>Label</MinimalButton>
+                <MinimalButton m={{ r: "1rem" }} disabled><Icon name="Chat" size="20px" m={{ r: "1rem" }} color="neutral500" />Label</MinimalButton>
+                <MinimalButton m={{ r: "1rem" }} disabled>Label<Icon name="CaretDown" size="20px" m={{ l: "1rem" }} color="neutral500" /></MinimalButton>
+                <MinimalButton m={{ r: "1rem" }} disabled><Icon name="Chat" size="20px" color="neutral500" /></MinimalButton>
+              </Div>
+
+            </Div>
+
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Error button enable hover pressed focussed diable</Text>
+
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <ErrorButton m={{ r: "1rem" }}>Label</ErrorButton>
+                <ErrorButton m={{ r: "1rem" }}><Icon name="Chat" size="20px" m={{ r: "1rem" }} color="neutralNo" />Label</ErrorButton>
+                <ErrorButton m={{ r: "1rem" }}>Label<Icon name="CaretDown" size="20px" m={{ l: "1rem" }} color="neutralNo" /></ErrorButton>
+                <ErrorButton m={{ r: "1rem" }}><Icon name="Chat" size="20px" color="neutralNo" /></ErrorButton>
+              </Div>
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <ErrorButton m={{ r: "1rem" }} disabled>Label</ErrorButton>
+                <ErrorButton m={{ r: "1rem" }} disabled><Icon name="Chat" size="20px" m={{ r: "1rem" }} color="neutralNo" />Label</ErrorButton>
+                <ErrorButton m={{ r: "1rem" }} disabled>Label<Icon name="CaretDown" size="20px" m={{ l: "1rem" }} color="neutralNo" /></ErrorButton>
+                <ErrorButton m={{ r: "1rem" }} disabled><Icon name="Chat" size="20px" color="neutralNo" /></ErrorButton>
+              </Div>
+
+            </Div>
+
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Error button enable hover pressed focussed diableHover</Text>
+
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <Anchor m={{ r: "1rem" }}>Link</Anchor>
+              
+                <Anchor m={{ r: "1rem" }} disabled>Link</Anchor>
+              </Div>
+
             </Div>
           </Div>
 

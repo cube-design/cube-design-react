@@ -51,7 +51,14 @@ const computeButtonStyle = (props, context) => {
     hoverTextColor,
     hoverBorderColor,
     hoverShadow,
+    focusBg,
+    focusTextColor,
     focusBorderColor,
+    focusShadow,
+    activeBg,
+    activeBorderColor,
+    activeTextColor,
+    activeShadow,
     isOpen,
     hover,
     offset,
@@ -116,6 +123,22 @@ const computeButtonStyle = (props, context) => {
         ...makeResponsive(hoverTextColor, "color", context.colors),
         ...makeResponsive(hoverBorderColor, "border-color", context.colors),
         ...makeResponsive(hoverShadow, "box-shadow", context.shadows)
+      }
+    },
+    {
+      ":focus": {
+        ...makeResponsive(focusBg, "background", context.colors),
+        ...makeResponsive(focusTextColor, "color", context.colors),
+        ...makeResponsive(focusBorderColor, "border-color", context.colors),
+        ...makeResponsive(focusShadow, "box-shadow", context.shadows)
+      }
+    },
+    {
+      ":active": {
+        ...makeResponsive(activeBg, "background", context.colors),
+        ...makeResponsive(activeTextColor, "color", context.colors),
+        ...makeResponsive(activeBorderColor, "border-color", context.colors),
+        ...makeResponsive(activeShadow, "box-shadow", context.shadows)
       }
     },
     {

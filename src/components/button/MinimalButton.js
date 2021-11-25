@@ -4,7 +4,7 @@ import { ThemeContext } from "../../core/ThemeContext";
 import computeButtonStyle from "./Button.style";
 import Icon from "../icon/Icon";
 
-const Button = React.forwardRef((props, ref) => {
+const MinimalButton = React.forwardRef((props, ref) => {
   return (
     <ThemeContext.Consumer>
       {value => {
@@ -44,7 +44,7 @@ const BasicButton = styled("button", props => ({
   ...props.$styleArray
 }));
 
-Button.defaultProps = {
+MinimalButton.defaultProps = {
   tag: "button",
   d: "flex",
   justify: "center",
@@ -55,17 +55,20 @@ Button.defaultProps = {
   border: "none",
   h: "2.5rem",
   cursor: "pointer",
-  bg: "blue500",
-  textColor: "white",
+  bg: "neutralNo", 
+  textColor: "neutral700",
+  hoverBg: "neutral100",
+  activeBg: "neutral200",
+  focusShadow: "0 0 0 0.2rem blue200",
   textSize: "body",
   textWeight: "500",
   fontFamily: "primary",
   transition: "true",
-  disableBg: "gray400",
   disableShadow: "0",
   disableBorderColor: "gray300",
-  disableColor: "white",
-  focusShadow: "0 0 0 0.2rem rgb(0 123 255 / 50%);"
+  disableBg: "neutralNo",
+  disableColor: "neutral400",
+  focusShadow: "0 0 0 0.2rem #D6E0FF"
 };
 
-export {Button};
+export {MinimalButton};
