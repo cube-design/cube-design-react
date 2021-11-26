@@ -5606,6 +5606,81 @@ export const iconPaths = {
       />
     );
   },
+  RadioUnncheck: ({ fillColor, color, ...rest }) => {
+    return (
+      <circle cx="8" cy="8" r="7.5" fill={fillColor} stroke={color} {...rest} />
+    );
+  },
+  RadioCheck: ({ color, color2, ...rest }) => {
+    return (
+      <>
+        <circle cx="8" cy="8" r="8" fill={color} />
+        <circle cx="8" cy="8" r="4" fill="white" />
+      </>
+    );
+  },
+  RadioUnncheckDisabled: ({ fillColor, color, ...rest }) => {
+    return (
+      <>
+        <circle cx="8" cy="8" r="8" fill={color} />
+      </>
+    );
+  },
+  RadioCheckDisabled: ({ fillColor, color, ...rest }) => {
+    return (
+      <>
+        <>
+          <circle cx="8" cy="8" r="8" fill="#F4F6FA" />
+          <circle cx="8" cy="8" r="4" fill="#C1C4D6" />
+        </>
+      </>
+    );
+  },
+  CBChecked: ({ color, ...rest }) => {
+    return (
+      <>
+        <rect width="16" height="16" rx="4" fill={color} {...rest} />
+        <path d="M12 4.5C11.72 4.5 11.47 4.61 11.29 4.79L7 9.09L4.71 6.79C4.53 6.61 4.28 6.5 4 6.5C3.45 6.5 3 6.95 3 7.5C3 7.78 3.11 8.03 3.29 8.21L6.29 11.21C6.47 11.39 6.72 11.5 7 11.5C7.28 11.5 7.53 11.39 7.71 11.21L12.71 6.21C12.89 6.03 13 5.78 13 5.5C13 4.95 12.55 4.5 12 4.5Z" fill="white" />
+      </>
+    );
+  },
+  CBDisableChecked: ({ color, ...rest }) => {
+    return (
+      <>
+        <rect width="16" height="16" rx="4" fill="#F4F6FA" />
+        <path d="M12 4.5C11.72 4.5 11.47 4.61 11.29 4.79L7.70865 8.3797C7.31766 8.7716 6.68267 8.77128 6.29207 8.37898L4.71 6.79C4.53 6.61 4.28 6.5 4 6.5C3.45 6.5 3 6.95 3 7.5C3 7.78 3.11 8.03 3.29 8.21L6.29 11.21C6.47 11.39 6.72 11.5 7 11.5C7.28 11.5 7.53 11.39 7.71 11.21L12.71 6.21C12.89 6.03 13 5.78 13 5.5C13 4.95 12.55 4.5 12 4.5Z" fill="#C1C4D6" />
+      </>
+    );
+  },
+  CBDisabled: ({ color, ...rest }) => {
+    return (
+      <>
+        <rect width="16" height="16" rx="4" fill="#F4F6FA" />
+        <rect x="4" y="7" width="8" height="2" rx="1" fill="#C1C4D6" />
+      </>
+
+    );
+  },
+  CBIndetermine: ({ color, ...rest }) => {
+    return (
+      <>
+        <rect width="16" height="16" rx="4" fill={color} />
+        <rect x="4" y="7" width="8" height="2" rx="1" fill="white" />
+      </>
+
+    );
+  },
+  CBUnchecked: ({ color, ...rest }) => {
+    return (
+      <rect x="0.5" y="0.5" width="15" height="15" rx="3.5" fill="white" stroke={color} />
+    );
+  },
+
+  CBDisabledUnchecked: ({ color, ...rest }) => {
+    return (
+      <rect width="16" height="16" rx="4" fill={color} />
+    );
+  },
 
 
   Loading: ({ color, ...rest }) => {

@@ -37,18 +37,22 @@ const Icon = React.forwardRef((props, ref) => {
   );
 });
 
-const BasicIcon = styled("svg", props => {
-  return {
-    ...props.$styleArray
-  };
-});
+
 
 Icon.defaultProps = {
   size: "1.5rem",
   color: "black",
   viewBox: "0 0 16 16",
   width: "16",
-  height: "16"
+  height: "16",  
+  transition: "true",
+  activeFillColor: "neutralNo"
 };
 
-export {Icon};
+export default Icon;
+
+const BasicIcon = styled("svg", props => {
+  return {
+    ...props.$styleArray
+  };
+});

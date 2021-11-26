@@ -25,9 +25,6 @@ const Anchor = React.forwardRef((props, ref) => {
   );
 });
 
-const BasicAnchor = styled("a", props => ({
-  ...props.$styleArray
-}));
 
 Anchor.defaultProps = {
   textWeight: "500",
@@ -44,4 +41,8 @@ Anchor.defaultProps = {
   focusShadow: "0 0 0 0.2rem #D6E0FF"
 };
 
-export { Anchor };
+export default Anchor;
+
+const BasicAnchor = styled("a", props => ({
+  ...props.$styleArray
+}));
