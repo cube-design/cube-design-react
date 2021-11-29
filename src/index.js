@@ -16,6 +16,7 @@ export { default as Switch } from "./components/checkbox/Switch";
 export { default as Image } from "./components/image/Image";
 export { default as Tag } from "./components/tag/Tag";
 export { default as Anchor } from "./components/anchor/Anchor";
+export { default as Badges } from "./components/badges/Badges";
 export { default as Collapse } from "./components/collapse/Collapse";
 export { default as Modal } from "./components/modal/Modal";
 export { default as SideDrawer } from "./components/sidedrawer/SideDrawer";

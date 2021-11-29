@@ -4,7 +4,7 @@ import arrayKeyMapToObject from "../../style-functions/arrayKeyMapToObject";
 import findRoundedDirection from "../../style-functions/findRoundedDirection";
 import findBorder from "../../style-functions/findBorder";
 
-const computeTextStyle = (props, context) => {
+const computeBadgesStyle = (props, context) => {
   const {
     d,
     pos,
@@ -12,50 +12,60 @@ const computeTextStyle = (props, context) => {
     bottom,
     left,
     right,
-    h,
-    maxH,
-    minH,
     justify,
     align,
     flexDir,
     flexGrow,
     flexWrap,
     order,
+    m,
+    p,
     rounded,
     border,
     borderColor,
-    m,
-    p,
+    h,
+    maxH,
+    minH,
+    w,
+    minW,
+    maxW,
+    cursor,
     bg,
+    bgImg,
+    bgSize,
+    bgRepeat,
+    bgPos,
+    textSize,
     textColor,
     textWeight,
     textAlign,
     textTransform,
-    textDecor,
-    textSize,
-    transition,
-    w,
-    maxW,
-    minW,
     fontFamily,
-    opacity,
-    hoverBg,
-    hoverBorderColor,
-    hoverTextColor,
-    tag,
-    theme,
-    cursor,
+    shadow,
+    transition,
     transform,
     transformOrigin,
-    shadow,
     zIndex,
     overflow,
+    opacity,
+    hoverBg,
+    hoverTextColor,
+    hoverBorderColor,
     hoverShadow,
-    ws,
+    focusBorderColor,
+    isOpen,
+    hover,
+    offset,
+    size,
+    targetHover,
+    theme,
+    tag,
+    radius,
     ...rest
   } = props;
 
   const style = [
+    { boxSizing: "border-box" },
     findRoundedDirection(rounded, context.rounded),
     findDirection(m, "margin"),
     findDirection(p, "padding"),
@@ -80,31 +90,32 @@ const computeTextStyle = (props, context) => {
     makeResponsive(cursor, "cursor"),
     findBorder(border, borderColor, context.colors),
     makeResponsive(bg, "background", context.colors),
+    bgImg && { backgroundImage: `url(${bgImg})` },
+    makeResponsive(bgSize, "background-size"),
+    makeResponsive(bgRepeat, "background-repeat"),
+    makeResponsive(bgPos, "background-position"),
+    makeResponsive(bgRepeat, "background-repeat"),
     makeResponsive(textColor, "color", context.colors),
     makeResponsive(textWeight, "font-weight"),
-    makeResponsive(fontFamily, "font-family", context.fontFamily),
     makeResponsive(textAlign, "text-align"),
     makeResponsive(textTransform, "text-transform"),
-    makeResponsive(textDecor, "text-decoration"),
+    makeResponsive(fontFamily, "font-family", context.fontFamily),
     makeResponsive(transform, "transform"),
     makeResponsive(transformOrigin, "transform-origin"),
     makeResponsive(shadow, "box-shadow", context.shadows),
-    makeResponsive(transition, "transition"),
+    makeResponsive(transition, "transition", context.transition),
     makeResponsive(textSize, "font-size", context.textSize.size),
     makeResponsive(textSize, "line-height", context.textSize.height),
     makeResponsive(zIndex, "z-index"),
     makeResponsive(overflow, "overflow"),
-    makeResponsive(opacity, "opacity"),    
-    makeResponsive(ws, "white-space"),
+    makeResponsive(opacity, "opacity"),
+    makeResponsive(radius, "border-radius"),
     {
       ":hover": {
         ...makeResponsive(hoverBg, "background", context.colors),
         ...makeResponsive(hoverTextColor, "color", context.colors),
         ...makeResponsive(hoverBorderColor, "border-color", context.colors),
         ...makeResponsive(hoverShadow, "box-shadow", context.shadows)
-      },
-      ":visited": {
-        ...makeResponsive(textColor, "color", context.colors)
       }
     }
   ];
@@ -112,4 +123,4 @@ const computeTextStyle = (props, context) => {
   return [rest, arrayKeyMapToObject(style)];
 };
 
-export default computeTextStyle;
+export default computeBadgesStyle;

@@ -3,14 +3,17 @@ import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
 import Text from "../src/components/text/Text";
 import Icon from "../src/components/icon/Icon";
-import { Button } from "../src/components/button/Button";
 import { PrimaryButton } from "../src/components/button/PrimaryButton";
 import { SecondaryButton } from "../src/components/button/SecondaryButton";
 import { ErrorButton } from "../src/components/button/ErrorButton";
 import { MinimalButton } from "../src/components/button/MinimalButton";
 import Anchor from '../src/components/anchor/Anchor'
 import Radiobox from '../src/components/radiobox/Radiobox';
-import Checkbox from '../src/components/checkbox/Checkbox'
+import Checkbox from '../src/components/checkbox/Checkbox';
+import Badges from '../src/components/badges/Badges';
+import Pills from '../src/components/pills/Pills';
+import Avatars from '../src/components/avatars/Avatars';
+import Status from '../src/components/status/Status';
 
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
@@ -823,10 +826,67 @@ class App extends Component {
               <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
                 <Checkbox label="Label" disabled />
                 <Checkbox label="Label" indetermine />
-                <Checkbox label="Label"  disabled checked />
+                <Checkbox label="Label" disabled checked />
               </Div>
             </Div>
 
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Avatars</Text>
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <Avatars m={{ r: "1rem" }}>DS</Avatars>
+                <Avatars textColor="blue500" bg="blue200" m={{ r: "1rem" }}>DS</Avatars>
+                <Avatars textColor="yellow500" bg="yellow200" m={{ r: "1rem" }}>DS</Avatars>
+                <Avatars textColor="red500" bg="red200" m={{ r: "1rem" }}>DS</Avatars>
+                <Avatars textColor="violet500" bg="violet200" m={{ r: "1rem" }}>DS</Avatars>
+                <Avatars textColor="teal500" bg="teal200" m={{ r: "1rem" }}>DS</Avatars>
+                <Avatars textColor="pink500" bg="pink200" m={{ r: "1rem" }}>DS</Avatars>
+                <Avatars textColor="orange500" bg="orange200" m={{ r: "1rem" }}>DS</Avatars>
+                <Avatars textColor="teal500" bg="teal200" m={{ r: "1rem" }}>DS</Avatars>
+              </Div>
+            </Div>
+
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Bages</Text>
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <Badges m={{ r: "1rem" }}>NEUTRAL</Badges>
+                <Badges textColor="blue500" bg="blue200" m={{ r: "1rem" }}>BLUE</Badges>
+                <Badges textColor="green500" bg="green200" m={{ r: "1rem" }}>GREEN</Badges>
+                <Badges textColor="red500" bg="yellow200" m={{ r: "1rem" }}>YELLOW</Badges>
+                <Badges textColor="red500" bg="red200" m={{ r: "1rem" }}>RED</Badges>
+                <Badges textColor="violet500" bg="violet200" m={{ r: "1rem" }}>VIOLET</Badges>
+                <Badges textColor="teal500" bg="teal200" m={{ r: "1rem" }}>TEAL</Badges>
+                <Badges textColor="pink500" bg="pink200" m={{ r: "1rem" }}>PINK</Badges>
+                <Badges textColor="orange500" bg="orange200" m={{ r: "1rem" }}>ORANGE</Badges>
+              </Div>
+            </Div>
+
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Pills</Text>
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <Pills m={{ r: "1rem" }}>480</Pills>
+                <Pills textColor="blue500" bg="blue200" m={{ r: "1rem" }}>480</Pills>
+                <Pills textColor="yellow500" bg="yellow200" m={{ r: "1rem" }}>420</Pills>
+                <Pills textColor="red500" bg="red200" m={{ r: "1rem" }}>24</Pills>
+                <Pills textColor="violet500" bg="violet200" m={{ r: "1rem" }}>56</Pills>
+                <Pills textColor="teal500" bg="teal200" m={{ r: "1rem" }}>098</Pills>
+                <Pills textColor="pink500" bg="pink200" m={{ r: "1rem" }}>123</Pills>
+                <Pills textColor="orange500" bg="orange200" m={{ r: "1rem" }}>43</Pills>
+                <Pills textColor="teal500" bg="teal200" m={{ r: "1rem" }}>21</Pills>
+              </Div>
+            </Div>
+
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Status</Text>
+              <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+                <Status m={{ r: "1rem" }}>Disabled</Status>
+                <Status iconColor="green400" m={{ r: "1rem" }}>Enabled</Status>
+                <Status iconColor="blue400"m={{ r: "1rem" }}>Info</Status>
+                <Status iconColor="yellow400" m={{ r: "1rem" }}>Warning</Status>
+                <Status iconColor="red400" m={{ r: "1rem" }}>No Data</Status>
+                <Status iconName="Cross" iconColor="red400" m={{ r: "1rem" }}>Label</Status>
+                <Status iconName="Tick" iconColor="green400" m={{ r: "1rem" }}>Label</Status>
+              </Div>
+            </Div>
           </Div>
 
 

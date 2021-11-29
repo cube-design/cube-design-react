@@ -40,9 +40,6 @@ const Button = React.forwardRef((props, ref) => {
   );
 });
 
-const BasicButton = styled("button", props => ({
-  ...props.$styleArray
-}));
 
 Button.defaultProps = {
   tag: "button",
@@ -68,4 +65,9 @@ Button.defaultProps = {
   focusShadow: "0 0 0 0.2rem rgb(0 123 255 / 50%);"
 };
 
-export {Button};
+export default Button;
+
+const BasicButton = styled("button", props => ({
+  ...props.$styleArray
+}));
+
