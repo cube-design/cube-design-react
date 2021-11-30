@@ -29,14 +29,14 @@ const BasePills = styled("span", props => {
 
 Pills.defaultProps = {
   tag: "span",
-  p: "2px 6px",
+  p: "2px 7px",
   bg: "neutral200",
   d: "inlin-block",
-  radius: "8px",
+  radius: "10px",
   textColor: "neutral800",
   textWeight: "600",
   fontFamily: "primary",  
-  textSize: "11px"
+  textSize: "pill"
 };
 
 export default Pills;

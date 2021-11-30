@@ -6,7 +6,7 @@ export { default as Div } from "./components/div/Div";
 export { iconPaths } from "./components/icon/iconPaths";
 export { default as Icon } from "./components/icon/Icon";
 export { default as Text } from "./components/text/Text";
-export { default as Button } from "./components/button/Button";
+// export { default as Button } from "./components/segmentControl/ControlledButton";
 export { default as Input } from "./components/input/Input";
 export { default as Textarea } from "./components/input/Textarea";
 export { default as Label } from "./components/label/Label";

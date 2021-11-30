@@ -3,6 +3,7 @@ import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
 import { Client as Styletron } from "styletron-engine-atomic";
 import Text from "../src/components/text/Text";
 import Icon from "../src/components/icon/Icon";
+import Button from "../src/components/segmentControl/ControlledButton";
 import { PrimaryButton } from "../src/components/button/PrimaryButton";
 import { SecondaryButton } from "../src/components/button/SecondaryButton";
 import { ErrorButton } from "../src/components/button/ErrorButton";
@@ -14,6 +15,9 @@ import Badges from '../src/components/badges/Badges';
 import Pills from '../src/components/pills/Pills';
 import Avatars from '../src/components/avatars/Avatars';
 import Status from '../src/components/status/Status';
+import SegmentControl from '../src/components/segmentControl/SegmentControl';
+import PrimaryTab from '../src/components/tab/PrimaryTab'
+import SecondaryTab from '../src/components/tab/SecondaryTab'
 
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
@@ -48,6 +52,8 @@ class App extends Component {
             textWeight="500"
             p={{ x: "1rem", y: "4rem" }}
           >
+
+
 
             <Div p={{ x: "1rem", y: "1rem" }} justify="left" align="left">
               <Text fontFamily="primary" textSize="heading900" textColor="neutral800" textWeight="600" m="15px 0 0 0">Heading H-900</Text>
@@ -814,6 +820,62 @@ class App extends Component {
               </Div>
             </Div>
 
+            <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
+              <Text fontFamily="primary" textSize="heading900" textColor="neutral800" textWeight="600" m="15px 0 15px 0">Tab</Text>
+              <Text fontFamily="primary" textSize="heading500" textColor="neutral800" textWeight="600" m="15px 0 15px 0">Primary</Text>
+              <Div d="flex" flexDir="row" justify="center" align="center">
+                <PrimaryTab active>Tab 1</PrimaryTab>
+                <PrimaryTab>Tab 2</PrimaryTab>
+                <PrimaryTab>Tab 3</PrimaryTab>
+              </Div>
+
+              <Text fontFamily="primary" textSize="heading500" textColor="neutral800" textWeight="600" m="15px 0 15px 0">Secondary</Text>
+              <Div d="flex" flexDir="row" justify="center" align="center">
+                <SecondaryTab active>Tab 1</SecondaryTab>
+                <SecondaryTab>Tab 2</SecondaryTab>
+                <SecondaryTab>Tab 3</SecondaryTab>
+              </Div>
+
+
+              <Text fontFamily="primary" textSize="heading900" textColor="neutral800" textWeight="600" m="15px 0 15px 0">Segment Control</Text>
+
+              <Text fontFamily="primary" textSize="heading500" textColor="neutral800" textWeight="600" m="15px 0 15px 0">Standard</Text>
+
+              <SegmentControl disabled>
+                <Button rounded="5px 0 0 5px">Label 1</Button>
+                <Button>Label 2</Button>
+                <Button rounded="0 5px 5px 0">Label 3</Button>
+              </SegmentControl>
+
+              <Text fontFamily="primary" textSize="heading500" textColor="neutral800" textWeight="600" m="15px 0 15px 0">Pill</Text>
+              <SegmentControl>
+                <Button rounded="5px 0 0 5px" className="active">
+                  Tab 1
+                  <Pills textColor="blue500" bg="blue200" m={{ l: "10px" }}>6</Pills>
+                </Button>
+                <Button >
+                  Tab 2
+                  <Pills textColor="blue500" bg="blue200" m={{ l: "10px" }}>6</Pills>
+                </Button>
+                <Button rounded="0 5px 5px 0">
+                  Tab 3
+                  <Pills textColor="blue500" bg="blue200" m={{ l: "10px" }}>6</Pills>
+                </Button>
+              </SegmentControl>
+
+              <Text fontFamily="primary" textSize="heading500" textColor="neutral800" textWeight="600" m="15px 0 15px 0">Status</Text>
+              <SegmentControl>
+                <Button rounded="5px 0 0 5px">
+                  <Status iconcolor="green400" margin="0 10px 0 0" />
+                  Tab 1
+                </Button>
+                <Button rounded="0 5px 5px 0">
+                  <Status iconcolor="red400" margin="0 10px 0 0" />
+                  Tab 2
+                </Button>
+              </SegmentControl>
+            </Div>
+
 
             <Div w="55%" d="flex" flexDir="column" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
               <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Checkbox Button</Text>
@@ -879,12 +941,12 @@ class App extends Component {
               <Text p={{ x: "1rem" }} fontFamily="primary" textSize="heading700" textWeight="600" align="left" bottom="40px" justify="left">Status</Text>
               <Div w="55%" d="flex" flexDir="row" justify="left" align="left" p={{ x: "1rem", y: "2rem" }} >
                 <Status m={{ r: "1rem" }}>Disabled</Status>
-                <Status iconColor="green400" m={{ r: "1rem" }}>Enabled</Status>
-                <Status iconColor="blue400"m={{ r: "1rem" }}>Info</Status>
-                <Status iconColor="yellow400" m={{ r: "1rem" }}>Warning</Status>
-                <Status iconColor="red400" m={{ r: "1rem" }}>No Data</Status>
-                <Status iconName="Cross" iconColor="red400" m={{ r: "1rem" }}>Label</Status>
-                <Status iconName="Tick" iconColor="green400" m={{ r: "1rem" }}>Label</Status>
+                <Status iconcolor="green400" m={{ r: "1rem" }}>Enabled</Status>
+                <Status iconcolor="blue400" m={{ r: "1rem" }}>Info</Status>
+                <Status iconcolor="yellow400" m={{ r: "1rem" }}>Warning</Status>
+                <Status iconcolor="red400" m={{ r: "1rem" }}>No Data</Status>
+                <Status iconname="Cross" iconcolor="red400" m={{ r: "1rem" }}>Label</Status>
+                <Status iconname="Tick" iconcolor="green400" m={{ r: "1rem" }}>Label</Status>
               </Div>
             </Div>
           </Div>

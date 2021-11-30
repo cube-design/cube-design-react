@@ -170,6 +170,7 @@ const THEME = {
       heading700: "20px",
       heading800: "24px",
       heading900: "32px",
+      pill: "11px",
     },
     height: {
       codeDefault: "16px",
@@ -186,6 +187,7 @@ const THEME = {
       heading700: "24px",
       heading800: "32px",
       heading900: "40px",
+      pill: "16px",
     }
   }
 };

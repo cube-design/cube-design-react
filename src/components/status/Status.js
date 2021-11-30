@@ -3,6 +3,7 @@ import { styled } from "styletron-react";
 import { ThemeContext } from "../../core/ThemeContext";
 import Icon from '../icon/Icon';
 import Text from '../text/Text';
+import Div from '../div/Div';
 import computeStatusStyle from "./Status.style";
 
 const Status = React.forwardRef((props, ref) => {
@@ -14,26 +15,26 @@ const Status = React.forwardRef((props, ref) => {
           prefix,
           children,
           suffix,
-          iconColor,
+          iconcolor,
           tag,
           ws,
           fontFamily,
-          iconName,
+          iconname,
+          margin,
           ...rest
         } = output[0];
 
         return (
-          <React.Fragment  $as={tag} {...rest} $styleArray={output[1]}>
+          <Div  $as={tag} {...rest} $styleArray={output[1]} d="flex">
             <Icon
-              name={props.iconName}
+              name={props.iconname}
               size="16px"
-              m={{ r: "8px" }}
-              color={iconColor}
+              m={margin}
+              color={iconcolor}
             />
             <Text
               ref={ref}
-              $as={props.tag}
-              m={{ r: "20px" }}
+              $as={props.tag}              
               ws = {props.ws}
               {...output[0]}
               $styleArray={output[1]}
@@ -41,18 +42,13 @@ const Status = React.forwardRef((props, ref) => {
               textWeight = {props.textWeight}
               textSize = {props.textSize}
             />
-          </React.Fragment>
+          </Div>
         );
       }}
     </ThemeContext.Consumer>
   );
 });
 
-const BaseStatus = styled("span", props => {
-  return {
-    ...props.$styleArray
-  };
-});
 
 Status.defaultProps = {
   tag: "span",
@@ -61,9 +57,18 @@ Status.defaultProps = {
   textWeight: "normal",
   fontFamily: "primary",
   textSize: "codeDefault",
-  iconColor: "neutral800",
+  iconcolor: "neutral800",
   ws: "nowrap",
-  iconName: "Record"
+  iconname: "Record",
+  Text,
+  margin: "0 8px 0 8px"
 };
 
 export default Status;
+
+
+const BaseStatus = styled("span", props => {
+  return {
+    ...props.$styleArray
+  };
+});
