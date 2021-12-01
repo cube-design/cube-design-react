@@ -4,7 +4,7 @@ import { ThemeContext } from "../../core/ThemeContext";
 import computeButtonStyle from "./Button.style";
 import Icon from "../icon/Icon";
 
-const Button = React.forwardRef((props, ref) => {
+const ErrorButton = React.forwardRef((props, ref) => {
   return (
     <ThemeContext.Consumer>
       {value => {
@@ -44,7 +44,7 @@ const BasicButton = styled("button", props => ({
   ...props.$styleArray
 }));
 
-Button.defaultProps = {
+ErrorButton.defaultProps = {
   tag: "button",
   d: "flex",
   justify: "center",
@@ -55,16 +55,20 @@ Button.defaultProps = {
   border: "none",
   h: "2.5rem",
   cursor: "pointer",
-  bg: "black",
-  textColor: "white",
+  bg: "red400",
+  hoverBg: "red500",
+  activeBg: "red600",
+  focusShadow: "0 0 0 2px blue200",
+  textColor: "neutralNo",
   textSize: "body",
   textWeight: "500",
   fontFamily: "primary",
   transition: "true",
-  disableBg: "gray400",
   disableShadow: "0",
   disableBorderColor: "gray300",
-  disableColor: "white"
+  disableColor: "white",
+  disableBg: "red100",
+  focusShadow: "0 0 0 0.2rem #F9DADA"
 };
 
-export default Button;
+export {ErrorButton};

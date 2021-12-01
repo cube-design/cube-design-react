@@ -1,7 +1,7 @@
 import React from "react";
-import Div from "./Div";
+import Div from "../div/Div";
 
-const Tab = ({
+const PrimaryTab = ({
   children,
   prefix,
   suffix,
@@ -30,26 +30,27 @@ const Tab = ({
         transform={`scale${
           activeDir == "left" || activeDir == "right" ? "Y" : "X"
         }(${active ? "1" : "0"})`}
-        bg={activeLineBg || "brand700"}
+        bg={activeLineBg || "blue400"}
       />
     </Div>
   );
 };
 
-Tab.defaultProps = {
+PrimaryTab.defaultProps = {
   d: "flex",
   align: "center",
   justify: "center",
   p: { x: "16px", y: "12px" },
-  textColor: "medium",
+  textColor: "neutral700",
   pos: "relative",
   cursor: "pointer",
-  hoverTextColor: "dark",
+  hoverTextColor: "blue400",
   activeDir: "bottom",
-  activeLineBg: "brand700"
+  activeLineBg: "blue400",
+  fontFamily: "primary",
 };
 
-export default Tab;
+export default PrimaryTab;
 
 const tabActiveDirection = (e, active) => {
   switch (e) {

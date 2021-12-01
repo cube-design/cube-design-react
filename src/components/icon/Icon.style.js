@@ -18,11 +18,14 @@ const computeIconStyle = (props, context) => {
     right,
     cursor,
     name,
-    color,
+    color,    
+    transition,
     hoverColor,
+    activeColor,
+    activeFillColor,
+    disabledColor,
     zIndex,
     opacity,
-    transition,
     ...rest
   } = props;
 
@@ -45,7 +48,8 @@ const computeIconStyle = (props, context) => {
     makeResponsive(transform, "transform"),
     makeResponsive(transformOrigin, "transform-origin"),
     makeResponsive(zIndex, "z-index"),
-    makeResponsive(opacity, "opacity"),
+    makeResponsive(opacity, "opacity"),    
+    makeResponsive(transition, "transition", context.transition),
     {
       ":hover": {
         path: {
@@ -55,6 +59,28 @@ const computeIconStyle = (props, context) => {
         circle: {
           ...makeResponsive(transition, "transition", context.transition),
           ...makeResponsive(hoverColor, "fill", context.colors)
+        }
+      },
+      ":active": {
+        path: {
+          ...makeResponsive(transition, "transition", context.transition),
+          ...makeResponsive(activeColor, "fill", context.colors)
+        },
+        circle: {
+          ...makeResponsive(transition, "transition", context.transition),
+          ...makeResponsive(activeColor, "fill", context.colors),
+        }
+      },      
+      ":disabled": {
+        path: {
+          ...makeResponsive(transition, "transition", context.transition),
+          ...makeResponsive(disabledColor, "fill", context.colors),
+          cursor: "not-allowed",
+        },
+        circle: {
+          ...makeResponsive(transition, "transition", context.transition),
+          ...makeResponsive(disabledColor, "fill", context.colors),
+          cursor: "not-allowed",
         }
       }
     }

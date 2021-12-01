@@ -22,12 +22,6 @@ const Text = React.forwardRef((props, ref) => {
   );
 });
 
-const BasicText = styled("p", props => {
-  return {
-    ...props.$styleArray
-  };
-});
-
 Text.defaultProps = {
   tag: "p",
   m: "0",
@@ -35,3 +29,9 @@ Text.defaultProps = {
 };
 
 export default Text;
+
+const BasicText = styled("p", props => {
+  return {
+    ...props.$styleArray
+  };
+});
